@@ -147,5 +147,12 @@ class BookPostTypePlugin {
 
 }
 
+    // Enqueue plugin stylesheet
+    function enqueue_books_archive_styles() {
+        wp_enqueue_style( 'books-archive-style', plugin_dir_url( __FILE__ ) . 'assets/style.css' );
+    }
+    add_action( 'wp_enqueue_scripts', 'enqueue_books_archive_styles' );
+
+    
 // Instantiate the plugin class
 new BookPostTypePlugin();
